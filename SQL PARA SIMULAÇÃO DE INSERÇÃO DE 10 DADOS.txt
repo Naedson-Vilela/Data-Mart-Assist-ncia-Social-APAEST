@@ -1,0 +1,79 @@
+INSERT INTO public.dim_tempo (PK, DATA_COMPLETA, ANO, MES, DIA, TRIMESTRE, SEMESTRE, DIA_SEMANA_DESC, MES_DESC) VALUES
+(1, '2023-01-15', 2023, 1, 15, 1, 1, 'Domingo', 'Janeiro'),
+(2, '2023-02-18', 2023, 2, 18, 1, 1, 'Sábado', 'Fevereiro'),
+(3, '2023-03-10', 2023, 3, 10, 1, 1, 'Sexta-feira', 'Março'),
+(4, '2023-04-20', 2023, 4, 20, 2, 1, 'Quinta-feira', 'Abril'),
+(5, '2023-05-25', 2023, 5, 25, 2, 1, 'Quinta-feira', 'Maio'),
+(6, '2023-06-30', 2023, 6, 30, 2, 1, 'Sexta-feira', 'Junho'),
+(7, '2023-07-14', 2023, 7, 14, 3, 2, 'Sexta-feira', 'Julho'),
+(8, '2023-08-05', 2023, 8, 5, 3, 2, 'Sábado', 'Agosto'),
+(9, '2023-09-27', 2023, 9, 27, 3, 2, 'Quarta-feira', 'Setembro'),
+(10, '2023-10-10', 2023, 10, 10, 4, 2, 'Terça-feira', 'Outubro');
+
+
+INSERT INTO public.dim_assistido (NOME, ESCOLARIDADE, DT_NASCIMENTO, DT_ENTRADA, DT_SAIDA, SEXO, HIST_DEFICIENCIA, NUM_MEMBROS, SIT_IMOVEL, MEIO_TANSP, RENDA_FAMILIAR, PK) VALUES
+('João Silva', 'Ensino Médio', '1990-05-12', '2023-01-15', '2023-06-15', 'Masculino', 'Nenhuma', 4, 'Casa', 'Ônibus', 1500.00, 1),
+('Maria Souza', 'Ensino Superior', '1985-11-22', '2023-02-18', '2023-07-20', 'Feminino', 'Física', 5, 'Apartamento', 'Carro', 3500.00, 2),
+('Pedro Lima', 'Ensino Fundamental', '2000-03-03', '2023-03-10', '2023-08-30', 'Masculino', 'Auditiva', 3, 'Casa', 'Bicicleta', 2000.00, 3),
+('Ana Martins', 'Ensino Médio', '1995-07-15', '2023-04-20', '2023-09-25', 'Feminino', 'Visual', 2, 'Casa', 'Ônibus', 2500.00, 4),
+('Carlos Pereira', 'Ensino Médio', '1992-09-10', '2023-05-25', NULL, 'Masculino', 'Nenhuma', 3, 'Casa', 'Carro', 3000.00, 5),
+('Paula Oliveira', 'Ensino Superior', '1996-10-01', '2023-06-30', NULL, 'Feminino', 'Física', 6, 'Casa', 'Ônibus', 1800.00, 6),
+('Ricardo Andrade', 'Ensino Fundamental', '1993-12-19', '2023-07-14', NULL, 'Masculino', 'Mental', 4, 'Casa', 'Bicicleta', 1200.00, 7),
+('Julia Ferreira', 'Ensino Médio', '1999-08-08', '2023-08-05', NULL, 'Feminino', 'Nenhuma', 5, 'Casa', 'Ônibus', 2000.00, 8),
+('Marcos Santos', 'Ensino Superior', '1988-04-04', '2023-09-27', NULL, 'Masculino', 'Visual', 2, 'Apartamento', 'Carro', 4000.00, 9),
+('Clara Ramos', 'Ensino Fundamental', '2001-02-16', '2023-10-10', NULL, 'Feminino', 'Auditiva', 3, 'Casa', 'Ônibus', 1000.00, 10);
+
+
+INSERT INTO public.dim_diagnostico (DIAGNOSTICOS, PK) VALUES
+('Transtorno de Ansiedade', 1),
+('Depressão', 2),
+('Esquizofrenia', 3),
+('Bipolaridade', 4),
+('TDAH', 5),
+('TEA', 6),
+('Dislexia', 7),
+('Transtorno de Personalidade', 8),
+('Autismo', 9),
+('Síndrome de Down', 10);
+
+
+
+INSERT INTO public.dim_local (LOGRADOURO, NUMERO, BAIRRO, CEP, CIDADE, ESTADO, ENDERECO_COMPLETO, PK) VALUES
+('Rua José Alves de Lima', '100', 'Centro', '56903-490', 'Serra Talhada', 'PE', 'Rua José Alves de Lima, 100, Centro, Serra Talhada/PE', 1),
+('Avenida Afonso Magalhães', '500', 'Bomba', '56903-200', 'Serra Talhada', 'PE', 'Avenida Afonso Magalhães, 500, Bomba, Serra Talhada/PE', 2),
+('Rua Tenente Domingos Gomes', '250', 'Centro', '56903-370', 'Floresta', 'PE', 'Rua Tenente Domingos Gomes, 250, Centro, Floresta/PE', 3),
+('Avenida Cel. Veremundo Soares', '780', 'Centro', '56910-000', 'Salgueiro', 'PE', 'Avenida Cel. Veremundo Soares, 780, Centro, Salgueiro/PE', 4),
+('Rua Presidente Vargas', '300', 'Centro', '56930-000', 'Triunfo', 'PE', 'Rua Presidente Vargas, 300, Centro, Triunfo/PE', 5),
+('Avenida José Dantas', '180', 'Centro', '56920-000', 'Santa Cruz da Baixa Verde', 'PE', 'Avenida José Dantas, 180, Centro, Santa Cruz da Baixa Verde/PE', 6),
+('Rua Padre João Pessoa', '60', 'Centro', '56940-000', 'São José do Belmonte', 'PE', 'Rua Padre João Pessoa, 60, Centro, São José do Belmonte/PE', 7),
+('Rua Major Saturnino Bezerra', '112', 'Centro', '56700-000', 'Afogados da Ingazeira', 'PE', 'Rua Major Saturnino Bezerra, 112, Centro, Afogados da Ingazeira/PE', 8),
+('Avenida Getúlio Vargas', '700', 'Centro', '56600-000', 'Carnaíba', 'PE', 'Avenida Getúlio Vargas, 700, Centro, Carnaíba/PE', 9),
+('Rua Projetada', '155', 'Centro', '56740-000', 'Itapetim', 'PE', 'Rua Projetada, 155, Centro, Itapetim/PE', 10);
+
+
+
+INSERT INTO public.dim_beneficios (BENEFICIOS, PK) VALUES
+('Auxílio Saúde', 1),
+('Auxílio Transporte', 2),
+('Bolsa Família', 3),
+('Benefício de Prestação Continuada', 4),
+('Vale Alimentação', 5),
+('Aposentadoria', 6),
+('Auxílio Doença', 7),
+('Isenção de Imposto', 8),
+('Auxílio Emergencial', 9),
+('Vale Gás', 10);
+
+
+INSERT INTO public.ft_assistidos (pk_assistido, pk_diagnostico, pk_local, pk_tempo, pk_beneficios) VALUES
+(1, 1, 1, 1, 1),
+(2, 2, 2, 2, 2),
+(3, 3, 3, 3, 3),
+(4, 4, 4, 4, 4),
+(5, 5, 5, 5, 5),
+(6, 6, 6, 6, 6),
+(7, 7, 7, 7, 7),
+(8, 8, 8, 8, 8),
+(9, 9, 9, 9, 9),
+(10, 10, 10, 10, 10);
+
