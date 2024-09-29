@@ -1,0 +1,79 @@
+CREATE TABLE IF NOT EXISTS "public".dim_tempo
+(
+  PK INT
+, DATA_COMPLETA DATE
+, ANO INT 
+, MES INT 
+, DIA INT 
+, TRIMESTRE INT 
+, SEMESTRE INT 
+, DIA_SEMANA_DESC VARCHAR(50)
+, MES_DESC VARCHAR(50)
+, CONSTRAINT dim_tempo_pkey PRIMARY KEY (PK)
+)
+;
+
+CREATE TABLE IF NOT EXISTS "public".dim_assistido
+(
+  NOME VARCHAR(255)
+, ESCOLARIDADE VARCHAR(255)
+, DT_NASCIMENTO DATE
+, DT_ENTRADA DATE
+, DT_SAIDA DATE
+, SEXO VARCHAR(255)
+, HIST_DEFICIENCIA VARCHAR(255)
+, NUM_MEMBROS INT
+, SIT_IMOVEL VARCHAR(255)
+, MEIO_TANSP VARCHAR(255)
+, RENDA_FAMILIAR FLOAT
+, PK INT
+, CONSTRAINT dim_assistido_pkey PRIMARY KEY (PK, NOME, DT_NASCIMENTO, SEXO)
+)
+;
+
+
+CREATE TABLE IF NOT EXISTS "public".dim_diagnostico
+(
+  DIAGNOSTICOS VARCHAR(255)
+, PK INT
+, CONSTRAINT dim_diagnostico_pkey PRIMARY KEY (PK, DIAGNOSTICOS)
+)
+;
+
+
+
+CREATE IF NOT EXISTS TABLE "public".dim_local
+(
+  LOGRADOURO VARCHAR(255)
+, NUMERO VARCHAR(255)
+, BAIRRO VARCHAR(255)
+, CEP VARCHAR(255)
+, CIDADE VARCHAR(255)
+, ESTADO VARCHAR(255)
+, ENDERECO_COMPLETO VARCHAR(255)
+, PK INT
+,CONSTRAINT dim_local_pkey PRIMARY KEY (PK, CIDADE, CEP, NUMERO)
+)
+;
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.ft_assistidos
+(
+    pk_assistido integer NOT NULL,
+    pk_diagnostico integer NOT NULL,
+    pk_local integer NOT NULL,
+    pk_tempo integer,
+    pk_beneficios integer,
+    CONSTRAINT ft_assistidos_pkey PRIMARY KEY (pk_assistido, pk_diagnostico, pk_local, pk_beneficios)
+)
+
+
+CREATE TABLE IF NOT EXISTS "public".dim_beneficios
+(
+  BENEFICIOS VARCHAR(255)
+, PK INT
+, CONSTRAINT dim_beneficios_pk PRIMARY KEY (PK, BENEFICIOS)
+)
+;
